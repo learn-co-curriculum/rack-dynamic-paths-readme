@@ -88,7 +88,7 @@ class Application
 
     if req.path.match(/songs/)
 
-      song_title = req.path.split("/songs/").last #turn /songs/Sorry into Sorry
+      song_title = req.path.split("/songs/").last #strip path info to capture just the title
       song = @@songs.find{|s| s.title == song_title}
 
       resp.write song.artist
